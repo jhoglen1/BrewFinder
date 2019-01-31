@@ -1,0 +1,63 @@
+'use strict';
+
+
+const searchURL = 'https://api.openbrewerydb.org/breweries';
+
+
+
+
+
+function formatQueryParams(params) {
+  const queryItems = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+  return queryItems.join('&');
+}
+
+
+function displayResults(responseJson) {
+   console.log(responseJson);
+  $('#results-list').empty();
+   for (let i = 0; i < responseJson.length; i++){
+     $('#results-list').append(
+      `<li><h5>${responseJson[i].name}</h5>
+      <p>City: ${responseJson[i].city}</p>
+       <p>State: ${responseJson[i].state}</p>
+       <p>Brewery Type: ${responseJson[i].brewery_type}</p>
+      <a href='${responseJson[i].website_url}'>${responseJson[i].website_url}</a>
+      </li>`)
+    };
+
+  $('#results').removeClass('hidden');
+};
+
+function getBeer(query) {
+  const params = {
+    by_city : query,
+
+    };
+  const queryString = formatQueryParams(params)
+ const url = searchURL + '?' + queryString;
+ console.log(url);
+
+  fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => displayResults(responseJson))
+    .catch(err => {
+      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+    });
+}
+function watchForm() {
+  $('form').submit(event => {
+    event.preventDefault();
+    const searchTerm = $('#js-search-term').val();
+
+    getBeer(searchTerm);
+  });
+}
+
+$(watchForm);

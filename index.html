@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> API</title>
+    <title>BrewFinder</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1> Search</h1>
-
-        <form id="js-form">
-            <label for="search-term">Search term</label>
+  <nav>
+  <h1> BrewFinder</h1>
+  </nav>
+  <main>
+    <h3>“There is an ancient Celtic axiom that says ‘Good people drink good beer.’ Which is true, then as now. Just look around you in any public barroom and you will quickly see: Bad people drink bad beer. Think about it.”<br> Hunter S. Thompson</h3>
+ </main>
+  <div class="container">
+        <h2>Find The  Brewery</h2>
+           <form id="js-form">
+            <label for="search-term">Search By City/Town Name</label><br>
             <input type="text" name="search-term" id="js-search-term" required>
-
-            <label for="max-results">Maximum results to return</label>
-            <input type="number" name="max-results" id="js-max-results" value="10">
-
-            <input type="submit" value="Go!">
+             <input type="submit" value="Find"
+             id="button-go">
         </form>
 
         <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
-          <h2>Search results</h2>
+
           <ul id="results-list">
-          </ul>
+            </ul>
         </section>
     </div>
     <script src="index.js"></script>
