@@ -13,7 +13,7 @@ function formatQueryParams(params) {
   return queryItems.join('&');
 }
 
-
+$('#results').removeClass('hidden');
 function displayResults(responseJson) {
    console.log(responseJson);
   $('#results-list').empty();
@@ -26,8 +26,10 @@ function displayResults(responseJson) {
       <a href='${responseJson[i].website_url}'>${responseJson[i].website_url}</a>
       </li>`)
     };
+   if(responseJson==0){
+     $('#js-error-message').text(`No Results,Please Try Again.`);
+   }
 
-  $('#results').removeClass('hidden');
 };
 
 function getBeer(query) {

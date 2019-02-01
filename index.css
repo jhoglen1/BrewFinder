@@ -23,8 +23,6 @@ nav,h1{
   text-align:center;
   padding-top:10px;
   }
-
-
 h2{
   padding: 45px 0 0 0 ;
   font-size:30px;
@@ -47,29 +45,24 @@ button:hover {
   margin: 0 auto;
   background-color:rgb(77, 73, 73);
   color: rgb(209, 206, 206);
-
- }
+}
  h3{
    padding: 12px 0 12px 0;
-
- }
+}
 #js-search-term{
-
-   background-color: rgb(209, 206, 206);
-    width: 31%;
-
-   }
+  background-color: rgb(209, 206, 206);
+  width: 31%;
+}
 .error-message {
-    color: red;
-    }
+  color: red;
+}
 .hidden {
   display: none;
 }
 #results-list,h5{
  text-align:left;
   font-size:16px;
-
-  }
+}
 h4{
   margin-right:25%;
   font-size:16px;
