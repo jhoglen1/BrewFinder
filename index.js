@@ -26,9 +26,9 @@ function displayResults(responseJson) {
       <a href='${responseJson[i].website_url}'>${responseJson[i].website_url}</a>
       </li>`)
     };
-   if(responseJson==0){
-     $('#js-error-message').text(`No Results,Please Try Again.`);
-   }
+    if(responseJson == 0){
+       $('#results-list').text(`No Results,Please Try Again.`);
+        } 
 
 };
 
