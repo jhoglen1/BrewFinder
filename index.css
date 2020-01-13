@@ -40,14 +40,18 @@ form {
   margin-right: 25px;
   padding-bottom: 42px;
 }
+.search{
+  padding: 0 0 0 0;
 
+}
 button:hover {
   cursor: pointer;
 }
 
 #button-go {
   font-size: 15px;
-  background-color: rgb(209, 206, 206)
+  background-color: rgb(209, 206, 206);
+  padding-bottom: 5px;
 }
 
 .container,
