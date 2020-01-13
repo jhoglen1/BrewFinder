@@ -27,14 +27,17 @@ h1 {
   font-size: 36px;
   text-align: center;
   padding-top: 10px;
+  padding-bottom: 5px;
+
 }
 
 h2 {
   padding: 45px 0 0 0;
   font-size: 30px;
 }
-main{
-  padding-top: 50px;
+
+main {
+  padding-top: 37px;
   padding-bottom: 35px;
 }
 
@@ -44,10 +47,12 @@ form {
   margin-right: 25px;
   padding-bottom: 42px;
 }
-.search{
+
+.search {
   padding: 0 0 0 0;
 
 }
+
 button:hover {
   cursor: pointer;
 }
