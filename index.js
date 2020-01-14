@@ -1,18 +1,12 @@
 'use strict';
 
-
 const searchURL = 'https://api.openbrewerydb.org/breweries';
-
-
-
-
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
   return queryItems.join('&');
 }
-
 $('#results').removeClass('hidden');
 
 function displayResults(responseJson) {
@@ -34,13 +28,10 @@ function displayResults(responseJson) {
 function getBeer(query) {
   const params = {
     by_state: query,
-
-
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
   console.log(url);
-
   fetch(url)
     .then(response => {
       if (response.ok) {
