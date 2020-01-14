@@ -96,12 +96,13 @@ h5 {
   text-align: left;
   font-size: 16px;
  
-  
-
-
 }
 
 h4 {
   margin-right: 25%;
   font-size: 16px;
+}
+ul{
+list-style-type: none;
+
 }
