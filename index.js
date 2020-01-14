@@ -14,32 +14,32 @@ function formatQueryParams(params) {
 }
 
 $('#results').removeClass('hidden');
+
 function displayResults(responseJson) {
-   console.log(responseJson);
+  console.log(responseJson);
   $('#results-list').empty();
-   for (let i = 0; i < responseJson.length; i++){
-     $('#results-list').append(
+  for (let i = 0; i < responseJson.length; i++) {
+    $('#results-list').append(
       `<li><h5>${responseJson[i].name}</h5>
-      <p>City: ${responseJson[i].city}</p>
-       <p>State: ${responseJson[i].state}</p>
-       <p>Brewery Type: ${responseJson[i].brewery_type}</p>
+     <p>Address: ${responseJson[i].street} </br> </br> ${responseJson[i].city}, ${responseJson[i].state} ${responseJson[i].postal_code} </p> 
       <a href='${responseJson[i].website_url}'>${responseJson[i].website_url}</a>
       </li>`)
-    };
-    if(responseJson == 0){
-       $('#results-list').text(`No Results,Please Try Again.`);
-        } 
+  };
+  if (responseJson == 0) {
+    $('#results-list').text(`No Results, Please Try Again.`);
+  }
 
 };
 
 function getBeer(query) {
   const params = {
-    by_city : query,
+    by_state: query,
 
-    };
+
+  };
   const queryString = formatQueryParams(params)
- const url = searchURL + '?' + queryString;
- console.log(url);
+  const url = searchURL + '?' + queryString;
+  console.log(url);
 
   fetch(url)
     .then(response => {
@@ -53,6 +53,7 @@ function getBeer(query) {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
+
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
