@@ -27,10 +27,11 @@ function displayResults(responseJson) {
 
 function getBeer(query) {
   const params = {
-    by_state: query,
+   
+    by_city : query, 
   };
   const queryString = formatQueryParams(params)
-  const url = searchURL + '?' + queryString;
+  const url = searchURL + '?' + queryString  ;
   console.log(url);
   fetch(url)
     .then(response => {
