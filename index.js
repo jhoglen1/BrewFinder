@@ -25,10 +25,11 @@ function displayResults(responseJson) {
 
 };
 
-function getBeer(query) {
+function getBeer(query,query2) {
   const params = {
    
-    by_city : query, 
+    by_city : query,
+    by_state : query2 
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString  ;
@@ -50,8 +51,11 @@ function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val();
+const searchTerm2 = $( '#js-search-term2').val();
 
-    getBeer(searchTerm);
+
+getBeer(searchTerm, searchTerm2);
+
   });
 }
 

@@ -78,7 +78,8 @@ h3 {
   padding: 12px 0 12px 0;
 }
 
-#js-search-term {
+#js-search-term,
+#js-search-term2 {
   background-color: rgb(209, 206, 206);
   width: 31%;
 }
